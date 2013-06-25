@@ -1,0 +1,30 @@
+demo_taskcategory:
+    pattern:  /
+    defaults: { _controller: "DemoTaskBundle:Category:index" }
+
+demo_taskcategory_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DemoTaskBundle:Category:show" }
+
+demo_taskcategory_new:
+    pattern:  /new
+    defaults: { _controller: "DemoTaskBundle:Category:new" }
+
+demo_taskcategory_create:
+    pattern:  /create
+    defaults: { _controller: "DemoTaskBundle:Category:create" }
+    requirements: { _method: post }
+
+demo_taskcategory_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DemoTaskBundle:Category:edit" }
+
+demo_taskcategory_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DemoTaskBundle:Category:update" }
+    requirements: { _method: post|put }
+
+demo_taskcategory_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DemoTaskBundle:Category:delete" }
+    requirements: { _method: post|delete }

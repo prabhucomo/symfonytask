@@ -1,0 +1,38 @@
+Demo\TaskBundle\Entity\Customer:
+  type: entity
+  table: customer
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    firstname:
+      type: string
+      length: 255
+      unique: true
+    lastname:
+      type: string
+      length: 255
+    emailaddress:
+      type: string
+      length: 255
+    phonenumber:
+      type: integer
+      length: 255
+    addressline1:
+      type: text
+    addressline2:
+      type: text
+    state:
+      type: string
+      length: 255
+    zip:
+      type: string
+      length: 50
+    country:
+      type: string
+      length: 100
+  oneToMany:
+    purchase_order:
+      targetEntity: PurchaseOrder
+      mappedBy: customer

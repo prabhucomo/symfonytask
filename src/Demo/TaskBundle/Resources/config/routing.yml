@@ -1,0 +1,37 @@
+demo_task_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: DemoTaskBundle:Default:index }
+    
+DemoTaskBundle_product_ajax:
+    pattern:  /product_ajax/{id}
+    defaults: { _controller: DemoTaskBundle:Default:productAjax }
+    
+DemoTaskBundle_total_calc:
+    pattern:  /total_calc/{id}
+    defaults: { _controller: DemoTaskBundle:Default:totalCalc }
+    
+DemoTaskBundle_sending_mail:
+    pattern:  /sending_mail
+    defaults: { _controller: DemoTaskBundle:Default:sendingMail }    
+    
+DemoTaskBundle_demo_task:
+        resource: "@DemoTaskBundle/Resources/config/routing/product.yml"
+        prefix:   /demo_task
+        
+DemoTaskBundle_demo_taskcategory:
+        resource: "@DemoTaskBundle/Resources/config/routing/category.yml"
+        prefix:   /demo_taskcategory
+        
+DemoTaskBundle_demo_taskcustomer:
+        resource: "@DemoTaskBundle/Resources/config/routing/customer.yml"
+        prefix:   /demo_taskcustomer           
+
+DemoTaskBundle_demo_taskpurchaseorder:
+        resource: "@DemoTaskBundle/Resources/config/routing/purchaseorder.yml"
+        prefix:   /demo_taskpurchaseorder
+        
+DemoTaskBundle_demo_taskorderitem:
+        resource: "@DemoTaskBundle/Resources/config/routing/orderitem.yml"
+        prefix:   /demo_taskorderitem
+        
+        

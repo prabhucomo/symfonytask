@@ -1,0 +1,30 @@
+demo_taskpurchaseorder:
+    pattern:  /
+    defaults: { _controller: "DemoTaskBundle:PurchaseOrder:index" }
+
+demo_taskpurchaseorder_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DemoTaskBundle:PurchaseOrder:show" }
+
+demo_taskpurchaseorder_new:
+    pattern:  /new
+    defaults: { _controller: "DemoTaskBundle:PurchaseOrder:new" }
+
+demo_taskpurchaseorder_create:
+    pattern:  /create
+    defaults: { _controller: "DemoTaskBundle:PurchaseOrder:create" }
+    requirements: { _method: post }
+
+demo_taskpurchaseorder_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DemoTaskBundle:PurchaseOrder:edit" }
+
+demo_taskpurchaseorder_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DemoTaskBundle:PurchaseOrder:update" }
+    requirements: { _method: post|put }
+
+demo_taskpurchaseorder_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DemoTaskBundle:PurchaseOrder:delete" }
+    requirements: { _method: post|delete }

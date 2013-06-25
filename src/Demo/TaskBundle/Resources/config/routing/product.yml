@@ -1,0 +1,30 @@
+demo_task:
+    pattern:  /
+    defaults: { _controller: "DemoTaskBundle:Product:index" }
+
+demo_task_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DemoTaskBundle:Product:show" }
+
+demo_task_new:
+    pattern:  /new
+    defaults: { _controller: "DemoTaskBundle:Product:new" }
+
+demo_task_create:
+    pattern:  /create
+    defaults: { _controller: "DemoTaskBundle:Product:create" }
+    requirements: { _method: post }
+
+demo_task_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DemoTaskBundle:Product:edit" }
+
+demo_task_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DemoTaskBundle:Product:update" }
+    requirements: { _method: post|put }
+
+demo_task_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DemoTaskBundle:Product:delete" }
+    requirements: { _method: post|delete }

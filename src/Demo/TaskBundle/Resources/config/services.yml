@@ -1,0 +1,37 @@
+parameters:
+#    demo_task.example.class: Demo\TaskBundle\Example
+
+services:
+#    demo_task.example:
+#        class: %demo_task.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+  demo.task.admin.category:
+      class: Demo\TaskBundle\Admin\CategoryAdmin
+      tags:
+          - { name: sonata.admin, manager_type: orm, group: Details, label: Categories }
+      arguments: [null, Demo\TaskBundle\Entity\Category, DemoTaskBundle:CategoryAdmin]
+
+  demo.task.admin.product:
+      class: Demo\TaskBundle\Admin\ProductAdmin
+      tags:
+          - { name: sonata.admin, manager_type: orm, group: Details, label: Product }
+      arguments: [null, Demo\TaskBundle\Entity\Product, DemoTaskBundle:ProductAdmin]
+  
+  demo.task.admin.customer:
+      class: Demo\TaskBundle\Admin\CustomerAdmin
+      tags:
+          - { name: sonata.admin, manager_type: orm, group: Customers, label: Customer }
+      arguments: [null, Demo\TaskBundle\Entity\Customer, DemoTaskBundle:CustomerAdmin]
+      
+  demo.task.admin.purchaseorder:
+      class: Demo\TaskBundle\Admin\PurchaseOrderAdmin
+      tags:
+          - { name: sonata.admin, manager_type: orm, group: Orders, label: Order }
+      arguments: [null, Demo\TaskBundle\Entity\PurchaseOrder, DemoTaskBundle:PurchaseOrderAdmin]      
+      
+  demo.task.admin.orderitem:
+      class: Demo\TaskBundle\Admin\OrderItemAdmin
+      tags:
+          - { name: sonata.admin, manager_type: orm, group: Orders, label: OrderItem }
+      arguments: [null, Demo\TaskBundle\Entity\OrderItem, DemoTaskBundle:OrderItemAdmin]            

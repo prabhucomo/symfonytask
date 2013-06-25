@@ -1,0 +1,30 @@
+demo_taskcustomer:
+    pattern:  /
+    defaults: { _controller: "DemoTaskBundle:Customer:index" }
+
+demo_taskcustomer_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DemoTaskBundle:Customer:show" }
+
+demo_taskcustomer_new:
+    pattern:  /new
+    defaults: { _controller: "DemoTaskBundle:Customer:new" }
+
+demo_taskcustomer_create:
+    pattern:  /create
+    defaults: { _controller: "DemoTaskBundle:Customer:create" }
+    requirements: { _method: post }
+
+demo_taskcustomer_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DemoTaskBundle:Customer:edit" }
+
+demo_taskcustomer_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DemoTaskBundle:Customer:update" }
+    requirements: { _method: post|put }
+
+demo_taskcustomer_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DemoTaskBundle:Customer:delete" }
+    requirements: { _method: post|delete }

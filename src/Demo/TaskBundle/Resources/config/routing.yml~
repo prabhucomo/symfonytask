@@ -1,0 +1,20 @@
+demo_task_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: DemoTaskBundle:Default:index }
+    
+DemoTaskBundle_demo_task:
+        resource: "@DemoTaskBundle/Resources/config/routing/product.yml"
+        prefix:   /demo_task
+        
+DemoTaskBundle_demo_taskcategory:
+        resource: "@DemoTaskBundle/Resources/config/routing/category.yml"
+        prefix:   /demo_taskcategory
+        
+DemoTaskBundle_demo_taskcustomer:
+        resource: "@DemoTaskBundle/Resources/config/routing/customer.yml"
+        prefix:   /demo_taskcustomer
+        
+DemoTaskBundle_demo_taskorder:
+        resource: "@DemoTaskBundle/Resources/config/routing/order.yml"
+        prefix:   /demo_taskorder        
+

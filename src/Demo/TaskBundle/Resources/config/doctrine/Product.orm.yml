@@ -1,0 +1,45 @@
+Demo\TaskBundle\Entity\Product:
+  type: entity
+  table: product
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    itenname:
+      type: string
+      length: 255
+      unique: true
+    costprice:
+      type: integer
+      length: 255
+      unique: true
+    unitprice:
+      type: integer
+      length: 255
+      unique: true
+    promoprice:
+      type: integer
+      length: 255
+      unique: true
+    location:
+      type: string
+      length: 255
+      unique: true
+    description:
+      type: text
+    quantity:
+      type: string
+      length: 255
+      unique: true
+  manyToOne:
+    category:
+      targetEntity: Category
+      inversedBy: product
+      joinColumn:
+        name: product_id
+        referencedColumnName: id
+  oneToMany:
+    orderitem:
+      targetEntity: OrderItem
+      mappedBy: product

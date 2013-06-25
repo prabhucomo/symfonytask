@@ -1,0 +1,30 @@
+demo_taskorderitem:
+    pattern:  /
+    defaults: { _controller: "DemoTaskBundle:OrderItem:index" }
+
+demo_taskorderitem_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DemoTaskBundle:OrderItem:show" }
+
+demo_taskorderitem_new:
+    pattern:  /new
+    defaults: { _controller: "DemoTaskBundle:OrderItem:new" }
+
+demo_taskorderitem_create:
+    pattern:  /create
+    defaults: { _controller: "DemoTaskBundle:OrderItem:create" }
+    requirements: { _method: post }
+
+demo_taskorderitem_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DemoTaskBundle:OrderItem:edit" }
+
+demo_taskorderitem_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DemoTaskBundle:OrderItem:update" }
+    requirements: { _method: post|put }
+
+demo_taskorderitem_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DemoTaskBundle:OrderItem:delete" }
+    requirements: { _method: post|delete }
