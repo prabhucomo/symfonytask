@@ -1,1 +1,66 @@
-<H1>Hi I think its working</H1>
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('bundles/demotask/css/main.css') }}" type="text/css" media="all" />
+    {% endblock %}
+  </head>
+  <body>
+  <h1>Como Technology Solutions Pvt.Ltd., Chennai</h1>
+    <!-- Customer Name: {{ customerName }}
+    Status of Order: {{ orderStatus }}
+    Order Date: {{ orderedDate }}
+    Item Name: {{ itemName }}
+    Amount: {{ orderedAmount }}
+    Quantity: {{ orderedQuantity }}    
+    Grand Total: {{ grandTotal }} -->
+    <table id="box-table-a" summary="Employee Pay Sheet">
+    <!-- <thead>
+    	<tr>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Status of Order</th>
+            <th scope="col">Order Date</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Grand Total</th>
+        </tr>
+    </thead> -->
+    <tbody>
+    	<tr>
+            <th scope="col">Customer Name</th>
+            <td>{{ customerName }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Status of Order</th>
+            <td>{{ orderStatus }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Order Date</th>
+            <td>{{ orderedDate }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Item Name</th>
+            <td>{{ itemName }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Amount</th>
+            <td>{{ orderedAmount }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Quantity</th>
+            <td>{{ orderedQuantity }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Grand Total</th>
+            <td>{{ grandTotal }}</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>    
+    
+    
+    
+    

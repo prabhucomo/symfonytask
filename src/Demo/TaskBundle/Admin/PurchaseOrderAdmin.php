@@ -26,6 +26,7 @@ class PurchaseOrderAdmin extends Admin
                 ->add('status', 'choice', array(
     'choices' => array('Opened' => 'Opened', 'Closed' => 'Closed', 'InProgress' => 'InProgress', 'Delevired' => 'Delevired'),
                     'empty_value' => 'Select a Status',
+                    'attr'=> array('onchange' => 'getStatus(this)')
 ))
             //->add('order_date')
 //                ->add('order_date', null, array(

@@ -19,6 +19,7 @@ class OrderItemAdmin extends Admin
     {
         $formMapper
                 ->add('product', 'entity', array('class' => 'Demo\TaskBundle\Entity\Product',
+                    'empty_value' => 'Select a Product',
                     'property' => 'itenname',
                     'attr'=> array('onchange' => 'updateData(this)')))
             ->add('amount', 'integer',array('attr'=> array('class' => 'amount_int span5')))
