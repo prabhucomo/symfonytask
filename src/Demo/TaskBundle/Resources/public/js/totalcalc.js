@@ -30,15 +30,12 @@ function updateTotal() {
     $("#input[id$='_total']").val(totalvalue);
 }
 
-function getStatus(obj){
-    //var orderedStatus = $("input[id$='_status']").val(); 
+function getStatus(obj) {
     var statusValue = $(obj).val();
     globalVar = statusValue;
     return statusValue;
-    //alert (statusValue);
 }
 function sendmail() {
-    //getStatus();
     var orderlisturl = $(location).attr('href');
     var base_url = orderlisturl.split("admin");
     if (base_url[1] == "/demo/task/purchaseorder/create") {
@@ -49,25 +46,31 @@ function sendmail() {
         var orderedQuantity = $("input[id$='_quantity']").val();
         var orderedProduct = $("select[id$='_product']").val();
         var orderedTotal = $("input[id$='_total']").val();
-        //alert(orderedCustomer);alert(orderedStatus);alert(orderedDate);alert(orderedAmount);alert(orderedQuantity);alert(orderedProduct);alert(orderedTotal);
         $.ajax
                 ({
                     type: "POST",
                     url: "/app_dev.php/sending_mail",
-                    data: {customerName:    orderedCustomer,
-                           orderStatus:     orderedStatus,
-                           orderedDate:     orderedDate,
-                           orderedAmount:   orderedAmount,
-                           orderedQuantity: orderedQuantity,
-                           itemName:        orderedProduct,
-                           grandTotal:      orderedTotal },
+                    data: {customerName: orderedCustomer,
+                        orderStatus: orderedStatus,
+                        orderedDate: orderedDate,
+                        orderedAmount: orderedAmount,
+                        orderedQuantity: orderedQuantity,
+                        itemName: orderedProduct,
+                        grandTotal: orderedTotal},
                     async: false,
                     cache: false,
-                    beforeSend: function(){
-                        $("#result").html('<img src="tumblr_mfpmmdCdWA1s1r5leo1_500.gif"/> Now loding...');
+                    beforeSend: function() {
+                        //alert ('hi');
+                        $("#result").html('<img src="bundles/demotask/images/tumblr_mfpmmdCdWA1s1r5leo1_500.gif"/> Now loding...');
                     },
-                    success: function(response)
+                    success: function(data)
                     {
+                        //alert (response);
+                        if (orderedQuantity >= data) {
+                            alert('Please try to place the order below ' + data);
+                            window.location = orderlisturl;
+                            return false;
+                        }
                         alert('An Email is sent to you Please have a look at it');
                     }
                 })

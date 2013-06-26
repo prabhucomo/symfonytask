@@ -38,7 +38,10 @@ class DefaultController extends Controller {
 
         $productItem = $productQuery->getArrayResult();
         $itemName = $productItem[0]['itenname'];
-
+        $productQuantity = $productItem[0]['quantity'];
+        if ($orderQuantity >= $productQuantity) {
+            return new Response($productQuantity);
+        }
 
         $query = $this->getDoctrine()->getEntityManager()->getRepository('DemoTaskBundle:Customer')->createQueryBuilder('c')
                 ->where('c.firstname = :emailcustomer')
@@ -64,7 +67,22 @@ class DefaultController extends Controller {
                 )
         ;
         $this->get('mailer')->send($message);
-        return new Response($message);
+        $newQuantity = $productQuantity - $orderQuantity;
+//        $upDate = $this->getDoctrine()->getEntityManager()->getRepository('DemoTaskBundle:Product')->createQueryBuilder('p')
+//                ->update()
+//                ->field('quantity')->set($newQuantity)
+//                ->field('id')->equals($orderedProductId)
+//                ->getQuery()
+//                ->execute();
+        $qb = $this->getDoctrine()->getEntityManager()->createQueryBuilder();
+        $q = $qb->update('DemoTaskBundle:Product', 'p')
+                ->set('p.quantity', '?1')
+                ->where('p.id = ?2')
+                ->setParameter(1, $newQuantity)
+                ->setParameter(2, $orderedProductId)                
+                ->getQuery();
+        $p = $q->execute();
+        return new Response('success');
     }
 
     //    public function totalCalcAction($id)
