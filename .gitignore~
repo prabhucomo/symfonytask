@@ -1,0 +1,14 @@
+app/cache
+app/logs
+app/*.cache
+web/bundles
+web/uploads
+web/sitemap*.xml
+
+app/config/parameters*.yml
+composer.lock
+.idea
+nbproject
+composer.phar
+
+.DS_Store

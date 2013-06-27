@@ -6,10 +6,7 @@ web/uploads
 web/sitemap*.xml
 
 app/config/parameters*.yml
-composer.lock
-vendor
 .idea
 nbproject
-composer.phar
 
 .DS_Store
