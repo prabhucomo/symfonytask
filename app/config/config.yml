@@ -103,6 +103,7 @@ sonata_block:
 
         sonata.block.service.text:
         sonata.block.service.rss:
+        sonata.block.service.orderdetails:  
           
 sonata_user:
     security_acl: true

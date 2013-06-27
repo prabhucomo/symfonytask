@@ -68,7 +68,9 @@ function sendmail() {
                         //alert (response);
                         if (orderedQuantity >= data) {
                             alert('Please try to place the order below ' + data);
-                            window.location = orderlisturl;
+                            alert(orderlisturl);
+                            window.location.href = orderlisturl;
+                            //window.location = orderlisturl;
                             return false;
                         }
                         alert('An Email is sent to you Please have a look at it');
