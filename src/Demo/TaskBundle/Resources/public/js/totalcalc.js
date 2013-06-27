@@ -76,5 +76,86 @@ function sendmail() {
                         alert('An Email is sent to you Please have a look at it');
                     }
                 })
-    }
+    } 
+//    else if (base_url[1] == "/demo/task/customer/create") {
+//        var customerName = $("input[id$='_firstname']").val();
+//        var customerEmailAddress = $("input[id$='_emailaddress']").val();
+//        var customerPhoneNumber = $("input[id$='_phonenumber']").val();
+//        $.ajax
+//                ({
+//                    type: "POST",
+//                    url: "/app_dev.php/customer_details",
+//                    data: {name: customerName,
+//                        emailAddress: customerEmailAddress,
+//                        phoneNumber: customerPhoneNumber
+//                    },
+//                    async: false,
+//                    cache: false,
+//                    success: function(data)
+//                    {
+//                        alert('good');
+//                    }
+//                })
+//    }
 }
+function checkName(obj) {
+    var name = $(obj).val();    
+    $.ajax
+            ({
+                type: "POST",
+                url: "/app_dev.php/customer_details",
+                data: {customerName: name},
+                async: false,
+                cache: false,
+                success: function(response)
+                {
+                    if(response == 'failed'){
+                        alert ('The Firstname you have entered is Already registered. Try to choose some Other Name');
+                        $("input[id$='_firstname']").val("");
+                    }else{
+                        return true;
+                    }
+                }
+            })
+}
+function checkEmail(obj) {
+    var email = $(obj).val();    
+    $.ajax
+            ({
+                type: "POST",
+                url: "/app_dev.php/customer_email",
+                data: {customerEmail: email},
+                async: false,
+                cache: false,
+                success: function(response)
+                {
+                    if(response == 'failed'){
+                        alert ('The EmailAddress you have entered is Already registered. Try to choose some Other Email');
+                        $("input[id$='_emailaddress']").val("");
+                    }else{
+                        return true;
+                    }
+                }
+            })
+}
+function checkPhone(obj) {
+    var phone = $(obj).val();    
+    $.ajax
+            ({
+                type: "POST",
+                url: "/app_dev.php/customer_phone",
+                data: {customerName: phone},
+                async: false,
+                cache: false,
+                success: function(response)
+                {
+                    if(response == 'failed'){
+                        alert ('The Phone Number you have entered is Already registered. Try to choose some Other Number');
+                        $("input[id$='_phonenumber']").val("");
+                    }else{
+                        return true;
+                    }
+                }
+            })
+}
+

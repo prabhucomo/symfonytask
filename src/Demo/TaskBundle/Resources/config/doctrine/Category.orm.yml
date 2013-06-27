@@ -1,5 +1,6 @@
 Demo\TaskBundle\Entity\Category:
   type: entity
+  repositoryClass: Demo\TaskBundle\Repository\CategoryRepository
   table: category
   id:
     id:

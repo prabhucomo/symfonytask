@@ -12,7 +12,19 @@ DemoTaskBundle_total_calc:
     
 DemoTaskBundle_sending_mail:
     pattern:  /sending_mail
-    defaults: { _controller: DemoTaskBundle:Default:sendingMail }    
+    defaults: { _controller: DemoTaskBundle:Default:sendingMail }
+    
+DemoTaskBundle_customer_details:
+    pattern:  /customer_details
+    defaults: { _controller: DemoTaskBundle:Default:customerDetails }
+    
+DemoTaskBundle_customer_email:
+    pattern:  /customer_email
+    defaults: { _controller: DemoTaskBundle:Default:customerEmail }
+    
+DemoTaskBundle_customer_phone:
+    pattern:  /customer_phone
+    defaults: { _controller: DemoTaskBundle:Default:customerPhone }     
     
 DemoTaskBundle_demo_task:
         resource: "@DemoTaskBundle/Resources/config/routing/product.yml"

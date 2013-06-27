@@ -201,4 +201,32 @@ class OrderItem
 //        //return '';
 //        return $this->getProduct()?$this->getProduct():'';
 //    }
+    /**
+     * @var \Demo\TaskBundle\Entity\PurchaseOrder
+     */
+    private $purchase_order;
+
+
+    /**
+     * Set purchase_order
+     *
+     * @param \Demo\TaskBundle\Entity\PurchaseOrder $purchaseOrder
+     * @return OrderItem
+     */
+    public function setPurchaseOrder(\Demo\TaskBundle\Entity\PurchaseOrder $purchaseOrder = null)
+    {
+        $this->purchase_order = $purchaseOrder;
+
+        return $this;
+    }
+
+    /**
+     * Get purchase_order
+     *
+     * @return \Demo\TaskBundle\Entity\PurchaseOrder 
+     */
+    public function getPurchaseOrder()
+    {
+        return $this->purchase_order;
+    }
 }

@@ -19,10 +19,10 @@ class CustomerAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('firstname')
+            ->add('firstname', 'text',array('attr'=> array('onchange' => 'checkName(this)')))
             ->add('lastname')
-            ->add('emailaddress')
-            ->add('phonenumber')
+            ->add('emailaddress', 'text',array('attr'=> array('onchange' => 'checkEmail(this)')))
+            ->add('phonenumber', 'integer',array('attr'=> array('onchange' => 'checkPhone(this)')))
             ->add('addressline1')
             ->add('addressline2')
             ->add('state')

@@ -84,6 +84,33 @@ class DefaultController extends Controller {
         $p = $q->execute();
         return new Response('success');
     }
+    public function customerDetailsAction(){
+        $customerName = $_POST["customerName"];        
+        $em = $this->getDoctrine()->getEntityManager();        
+        $nameCount = $em->getRepository('DemoTaskBundle:Customer')->customerRecord($customerName);
+        if($nameCount == 1){
+            return new Response('failed');
+        }
+            return new Response('success');
+    }
+    public function customerEmailAction(){
+        $customerEmail = $_POST["customerEmail"];        
+        $em = $this->getDoctrine()->getEntityManager();        
+        $emailCount = $em->getRepository('DemoTaskBundle:Customer')->customerEmail($customerEmail);
+        if($emailCount == 1){
+            return new Response('failed');
+        }
+            return new Response('success');
+    }
+    public function customerPhoneAction(){
+        $customerPhone = $_POST["customerName"];        
+        $em = $this->getDoctrine()->getEntityManager();        
+        $phoneCount = $em->getRepository('DemoTaskBundle:Customer')->customerPhone($customerPhone);
+        if($phoneCount == 1){
+            return new Response('failed');
+        }
+            return new Response('success');
+    }
 
     //    public function totalCalcAction($id)
 //    {

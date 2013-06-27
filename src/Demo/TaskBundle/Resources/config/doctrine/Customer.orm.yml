@@ -1,5 +1,6 @@
 Demo\TaskBundle\Entity\Customer:
   type: entity
+  repositoryClass: Demo\TaskBundle\Repository\CustomerRepository
   table: customer
   id:
     id:

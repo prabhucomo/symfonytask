@@ -1,5 +1,6 @@
 Demo\TaskBundle\Entity\OrderItem:
   type: entity
+  repositoryClass: Demo\TaskBundle\Repository\OrderItemRepository
   table: order_item
   id:
     id:

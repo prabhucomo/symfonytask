@@ -1,5 +1,6 @@
 Demo\TaskBundle\Entity\PurchaseOrder:
   type: entity
+  repositoryClass: Demo\TaskBundle\Repository\PurchaseOrderRepository
   table: purchase_order
   id:
     id:

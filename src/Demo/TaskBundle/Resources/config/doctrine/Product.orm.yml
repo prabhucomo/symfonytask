@@ -1,5 +1,6 @@
 Demo\TaskBundle\Entity\Product:
   type: entity
+  repositoryClass: Demo\TaskBundle\Repository\ProductRepository
   table: product
   id:
     id:
