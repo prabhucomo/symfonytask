@@ -79,37 +79,40 @@ class DefaultController extends Controller {
                 ->set('p.quantity', '?1')
                 ->where('p.id = ?2')
                 ->setParameter(1, $newQuantity)
-                ->setParameter(2, $orderedProductId)                
+                ->setParameter(2, $orderedProductId)
                 ->getQuery();
         $p = $q->execute();
         return new Response('success');
     }
-    public function customerDetailsAction(){
-        $customerName = $_POST["customerName"];        
-        $em = $this->getDoctrine()->getEntityManager();        
+
+    public function customerDetailsAction() {
+        $customerName = $_POST["customerName"];
+        $em = $this->getDoctrine()->getEntityManager();
         $nameCount = $em->getRepository('DemoTaskBundle:Customer')->customerRecord($customerName);
-        if($nameCount == 1){
+        if ($nameCount == 1) {
             return new Response('failed');
         }
-            return new Response('success');
+        return new Response('success');
     }
-    public function customerEmailAction(){
-        $customerEmail = $_POST["customerEmail"];        
-        $em = $this->getDoctrine()->getEntityManager();        
+
+    public function customerEmailAction() {
+        $customerEmail = $_POST["customerEmail"];
+        $em = $this->getDoctrine()->getEntityManager();
         $emailCount = $em->getRepository('DemoTaskBundle:Customer')->customerEmail($customerEmail);
-        if($emailCount == 1){
+        if ($emailCount == 1) {
             return new Response('failed');
         }
-            return new Response('success');
+        return new Response('success');
     }
-    public function customerPhoneAction(){
-        $customerPhone = $_POST["customerName"];        
-        $em = $this->getDoctrine()->getEntityManager();        
+
+    public function customerPhoneAction() {
+        $customerPhone = $_POST["customerName"];
+        $em = $this->getDoctrine()->getEntityManager();
         $phoneCount = $em->getRepository('DemoTaskBundle:Customer')->customerPhone($customerPhone);
-        if($phoneCount == 1){
+        if ($phoneCount == 1) {
             return new Response('failed');
         }
-            return new Response('success');
+        return new Response('success');
     }
 
     //    public function totalCalcAction($id)

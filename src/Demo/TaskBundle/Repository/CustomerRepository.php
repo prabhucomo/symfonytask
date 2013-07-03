@@ -20,6 +20,7 @@ class CustomerRepository extends EntityRepository {
 
         return $query->getSingleScalarResult();
     }
+
     public function customerEmail($customerEmail) {
         $query = $this->getEntityManager()->createQuery(
                         'SELECT count(c.id) FROM DemoTaskBundle:Customer c WHERE c.emailaddress = :email'
@@ -27,6 +28,7 @@ class CustomerRepository extends EntityRepository {
 
         return $query->getSingleScalarResult();
     }
+
     public function customerPhone($customerPhone) {
         $query = $this->getEntityManager()->createQuery(
                         'SELECT count(c.id) FROM DemoTaskBundle:Customer c WHERE c.phonenumber = :phone'
