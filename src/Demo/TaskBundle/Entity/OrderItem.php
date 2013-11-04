@@ -201,6 +201,10 @@ class OrderItem
 //        //return '';
 //        return $this->getProduct()?$this->getProduct():'';
 //    }
+    public function __toString()
+    {
+        return $this->purchase_order = $purchaseOrder;
+    }
     /**
      * @var \Demo\TaskBundle\Entity\PurchaseOrder
      */

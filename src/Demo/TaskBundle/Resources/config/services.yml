@@ -34,4 +34,8 @@ services:
       class: Demo\TaskBundle\Admin\OrderItemAdmin
       tags:
           - { name: sonata.admin, manager_type: orm, group: Orders, label: OrderItem }
-      arguments: [null, Demo\TaskBundle\Entity\OrderItem, DemoTaskBundle:OrderItemAdmin]            
+      arguments: [null, Demo\TaskBundle\Entity\OrderItem, DemoTaskBundle:OrderItemAdmin]
+      
+  send_mail:
+      class:        Demo\TaskBundle\Mailer\OrderMail
+      arguments:    [sendmail]      

@@ -20,7 +20,7 @@ class PurchaseOrderAdmin extends Admin {
 
     protected function configureFormFields(FormMapper $formMapper) {
         $formMapper
-                //->add('status')
+                //->add('status','hidden')
                 ->add('status', 'choice', array(
                     'choices' => array('Opened' => 'Opened', 'Closed' => 'Closed', 'InProgress' => 'InProgress', 'Delevired' => 'Delevired'),
                     'empty_value' => 'Select a Status',
@@ -59,13 +59,19 @@ class PurchaseOrderAdmin extends Admin {
 //                    'by_reference' => true
 //                )
 //            )
-                ->add('orderitem', 'sonata_type_collection', array(
-                        //'type' => new \Demo\TaskBundle\Form\OrderItemType(),
-                        //'by_reference' => false // true doesn't work neither
-                        ), array(
-                    'edit' => 'inline',
-                    'inline' => 'table'
-                ))
+                   ->add('orderitem','sonata_type_collection', array('label' => 'Order Item', 'by_reference' => false), 
+                        array('edit' => 'inline',
+                            'inline' => 'table',
+                            'targetEntity'=>'Demo\TaskBundle\Entity\Orderitem'
+                            ))     
+                
+//                ->add('orderitem', 'sonata_type_collection', array(
+//                        //'type' => new \Demo\TaskBundle\Form\OrderItemType(),
+//                        //'by_reference' => false // true doesn't work neither
+//                        ), array(
+//                    'edit' => 'inline',
+//                    'inline' => 'table'
+//                ))
         //->add('product', 'shtumi_ajax_autocomplete', array('entity_alias'=>'order'));
         ;
     }
@@ -82,6 +88,7 @@ class PurchaseOrderAdmin extends Admin {
                 ->add('status')
                 ->add('customer')
                 ->add('order_date')
+                ->add('orderitem')
         ;
     }
 

@@ -22,12 +22,16 @@ function updateData(obj) {
 }
 
 function updateTotal() {
+    //alert ($("#input[id$='_orderitem_0_total']").val());
     var amountvalue = $("input[id$='_amount']").val();
+    //alert (amountvalue);
     var quantityvalue = $("input[id$='_quantity']").val();
+    //alert (quantityvalue);
     //alert (amountvalue);alert (quantityvalue);
     var totalvalue = amountvalue * quantityvalue;
     //alert (totalvalue);
-    $("#input[id$='_total']").val(totalvalue);
+    //alert (totalvalue);
+    $(".quantityvalue").val(totalvalue);
 }
 
 function getStatus(obj) {

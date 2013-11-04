@@ -24,4 +24,6 @@ Demo\TaskBundle\Entity\PurchaseOrder:
       targetEntity: OrderItem
       mappedBy: purchase_order
       cascade: ["persist","remove"]
-      orphanRemoval: true   
+      orphanRemoval: true
+  lifecycleCallbacks:
+    prePersist: [ sendingmail ]      

@@ -24,7 +24,7 @@ class OrderItemAdmin extends Admin {
                 ->add('amount', 'integer', array('attr' => array('class' => 'amount_int span5')))
                 //->add('tax','hidden')
                 ->add('quantity', 'integer', array('attr' => array('onchange' => 'updateTotal()')))
-                ->add('total', 'integer', array('attr' => array('class' => 'total_int span5')))
+                ->add('total', 'text', array('attr' => array('class' => 'total_int span5 quantityvalue')))
 
         //->add('purchaseorder')
         ;
@@ -33,7 +33,8 @@ class OrderItemAdmin extends Admin {
     protected function configureDatagridFilters(DatagridMapper $datagridMapper) {
         $datagridMapper
                 ->add('product')
-                ->add('purchaseorder')
+                ->add('amount')
+//                ->add('purchaseorder')
         ;
     }
 
@@ -44,7 +45,7 @@ class OrderItemAdmin extends Admin {
                 ->addIdentifier('quantity')
                 ->addIdentifier('total')
                 ->add('product')
-                ->add('purchaseorder')
+//                ->add('purchaseorder')
         ;
     }
 

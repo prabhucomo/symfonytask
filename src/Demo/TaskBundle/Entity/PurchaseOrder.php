@@ -3,6 +3,10 @@
 namespace Demo\TaskBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\EventSubscriber;
+use Doctrine\ORM\Event\LifecycleEventArgs;
+
+//use Demo\TaskBundle\Mailer;
 
 /**
  * PurchaseOrder
@@ -168,10 +172,19 @@ class PurchaseOrder
     public function addOrderitem(\Demo\TaskBundle\Entity\OrderItem $orderitem)
     {
         $this->orderitem[] = $orderitem;
-
-        return $this;
+        $orderitem->setPurchaseOrder($this);
+//        return $this;
     }
-
+    
+    public function setOrderitem(array $orderitem)
+    {
+        $this->orderitem = new \Doctrine\Common\Collections\ArrayCollection($orderitem);
+        foreach($orderitem as $order)
+        {
+            $order->setPurchaseOrder($this);
+        }
+    }
+    
     /**
      * Remove orderitem
      *
@@ -195,5 +208,12 @@ class PurchaseOrder
     {
       //return $this->getName();
         return $this->getStatus()?$this->getStatus():'';
+    }
+    /**
+     * @ORM\PrePersist
+     */
+    public function sendingmail()
+    {
+        //$this->
     }
 }
